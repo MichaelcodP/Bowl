@@ -1,0 +1,20 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+.title {
+    text-align: center;
+    /* H2 */
+    font-family: "DM Sans";
+    @include adaptiveValue("font-size", 64, 26);
+    font-weight: 700;
+    line-height: 93.75%; /* 60/64 */
+
+    &--main {
+
+        color: $lightWhite;
+
+        /* H1 */
+        @include adaptiveValue("font-size", 90, 48, 0, $containerWidth);
+        font-weight: 700;
+        
+    }
+}

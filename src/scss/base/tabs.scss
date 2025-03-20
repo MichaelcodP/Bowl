@@ -1,0 +1,33 @@
+.tabs {
+	// .tabs__navigation
+	&__navigation {
+		display: flex;
+	}
+	// .tabs__title
+	&__title {
+		padding:  0px 0px toRem(64) 0px;
+
+		font-family: "DM Sans";
+		font-size: toRem(26);
+		line-height: 138.461538%; /* 36/26 */
+		color: #202B13;
+		&:first-child {
+			padding-inline-start: toRem(42);
+		}
+		&:not(:last-child) {
+			padding-inline-end: toRem(20);
+		}
+
+		&._tab-active {
+			text-decoration: underline;
+			color: $mainColor;
+		}
+	}
+	// .tabs__content
+	&__content {
+	}
+	// .tabs__body
+	&__body {
+
+	}
+}

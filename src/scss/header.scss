@@ -1,0 +1,92 @@
+.header {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background-color: $mainColor;
+
+    @include adaptiveValue("padding-inline", 40, 20);
+    padding-block: toRem(5);
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: toRem(20);
+
+        @include adaptiveValue("min-heght", 75, 50);
+    }
+
+    &__logo {
+        position: relative;
+        z-index: 2;
+        display: inline-flex;
+        height: toRem(45);
+    }
+
+    &__menu {
+
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: toRem(24);
+        &__body {
+            @media (max-width:$mobile){
+                 display: flex;
+                 flex-direction: column;
+                 align-items: start;
+                 gap: toRem(32);
+            }
+        }
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: toRem(24);
+            row-gap: toRem(5);
+            @media (max-width:$mobile){
+                 flex-direction: column;
+                 gap: toRem(32);
+            }
+        }
+
+        &__item {            
+            
+        }
+
+        &__link {
+            color: $lightWhite;
+            font-size: toRem(16);
+            line-height: 143.75%; /* 23/16 */
+            letter-spacing: toRem(-0.16);
+            position: relative;
+            &::after{
+                content:'';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 0;
+                height: .125rem;
+                background-color: $beige;
+                transition: all .3s;
+                
+            }
+            &.active::after {
+                width: 100%;
+                left: 0;
+                transition: all 0.3s;
+            }
+            @media (any-hover: hover){
+                &:hover::after {
+                    width: 100%;
+                    left: 0;
+                }
+            } 
+            @media (max-width:$mobile){
+                 font-size: toRem(32); 
+            }
+        }
+    }
+}
